@@ -1,11 +1,3 @@
-var emojis = ["🤠", "✨", "🤯", "🎃", "👄", "👀", "🧟", "🧝", "🐸", "🦋", 
-              "🦑", "🦭", "🍀", "🍄", "🌒", "🌈", "🍉", "🍤", "🧊", "🌋", 
-              "💸", "🧨", "⚰️", "🦠", "🪙", "🥽", "🦕", "🐉", "☄️", "🥩", "🗿", "🗺"];
-
-var emojis1 = emojis.slice(0, 8);
-var emojis2 = emojis.slice(0, 18);
-var tarjetasDisplay = emojis1.concat(emojis1);
-
 /**
  * Función que agrega la clase todos los emojis de nuestra baraja al elemento
  * con la clase "mesa". Cada uno en su propio contenedor, al cual le damos las
@@ -52,6 +44,7 @@ function barajaTarjetas () {
  * Voltea las tarjetas cuando son clickeadas. Solo se pueden voltear 2 tarjetas a la vez.
  */
 function descubrir (){
+
     var descubiertas = document.querySelectorAll(".descubierta:not(.encontrada)");
 
     if( descubiertas.length > 1){
@@ -67,6 +60,7 @@ function descubrir (){
     }
 
     comparar(currentlySelected);
+    aumentaContador();
 }
 
 /**
@@ -114,4 +108,6 @@ reparteTarjetas();
 
 document.querySelectorAll(".tarjeta").forEach(function (elem) {
     elem.addEventListener("click", descubrir);
-})
+});
+
+//timer();

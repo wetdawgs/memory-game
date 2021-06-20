@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=K2D:wght@100;200;400;600;800&display=swap');
+
 /* body {
     margin: auto;
     min-height: 100vh;
@@ -61,6 +63,46 @@ main {
 .tarjeta.descubierta {
     transform: rotateY(-180deg);
 } */
+
+header {
+  max-height: 10%;
+  font-family: 'K2D', sans-serif;
+  font-weight: 400;
+  padding-left: 10px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25), 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#father {
+  display: flex;
+}
+
+.meta1 {
+  display: inline;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+}
+
+.mta {
+  line-height: 1em;
+  margin-top: 0 !important; 
+  padding-top: 0 !important;
+  font-size: 40px;
+  font-weight: 800;
+  color: rgba(224, 2, 106, 0.692);
+}
+
+#timer {
+  margin-left: 20px;
+}
+
+h4 {
+  line-height: 0.5em;
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.4);
+  padding: 0;
+  margin-bottom: 0;
+}
 
 body {
     margin: auto;
