@@ -1,10 +1,11 @@
+var cronometro;
+
 function timer (mins){
     
     minutos = mins;
     segundos = 0;
     minutosTexto = "00";
     segundosTexto = "00";
-    var cronometro;
 
     function aumentaReloj() {
         segundos--;
@@ -36,3 +37,7 @@ function timer (mins){
 
     cronometro = setInterval(aumentaReloj, 1000);
 }
+
+function stopTimer(){
+    clearInterval(cronometro);
+};

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=K2D:wght@100;200;400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
 /* body {
     margin: auto;
@@ -66,10 +67,11 @@ main {
 
 header {
   max-height: 10%;
-  font-family: 'K2D', sans-serif;
+  font-family: 'Righteous', sans-serif;
   font-weight: 400;
   padding-left: 10px;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25), 4px 4px 10px rgba(0, 0, 0, 0.2);
+  background-color: #FFF;
 }
 
 #father {
@@ -87,7 +89,7 @@ header {
   margin-top: 0 !important; 
   padding-top: 0 !important;
   font-size: 40px;
-  font-weight: 800;
+  font-weight: 400;
   color: rgba(224, 2, 106, 0.692);
 }
 
@@ -98,7 +100,7 @@ header {
 h4 {
   line-height: 0.5em;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 400;
   color: rgba(0, 0, 0, 0.4);
   padding: 0;
   margin-bottom: 0;
@@ -126,6 +128,7 @@ body {
     align-content: center;
     max-width: 50rem;
     margin: auto;
+    z-index: 1000;
   }
   
   .tarjeta {
@@ -205,14 +208,70 @@ body {
     }
   }
   
-  .encontrada {
-    pointer-events: none;
-  }
+.encontrada {
+  pointer-events: none;
+}
   
-  .encontrada .contenido {
-    animation: acierto 1.3s ease-in-out forwards;
-  }
+.encontrada .contenido {
+  animation: acierto 1.3s ease-in-out forwards;
+}
   
-  .error {
-    animation: /*error*/ 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-  }
+.error {
+  animation: /*error*/ 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+.visible{
+  visibility: visible !important;
+}
+
+.feedback {
+  visibility: hidden;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-family: 'Righteous', sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  color: rgba(0, 0, 255, 0.4);
+}
+
+#seal {
+  margin-top: 0;
+  color: #000;
+  line-height: 0.95em;
+  font-size: 90px;
+  z-index: 1000;
+}
+
+#bien {
+  margin-top: 0 !important;
+  margin-bottom: 20px;
+  padding-top: 0 !important;
+  line-height: 0.35em;
+  font-size: 70px;
+  z-index: -1;
+}
+
+#reiniciar {
+  line-height: 1.5em;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding-top: 20px;
+  display: block;
+  padding: 5px;
+  border: none;
+  background-color: rgba(224, 2, 106, 0.692);
+  color: #FFF;
+  font-family: 'Righteous', sans-serif;
+  font-weight: 400;
+  font-size: 25px;
+  border-radius: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  left: auto;
+  right: auto;
+}
+
+

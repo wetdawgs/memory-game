@@ -10,7 +10,7 @@
         <link href="style.css" rel="stylesheet" />
     </head>
 
-    <body>
+    <body id="fin">
         <header>
             <div id="father">
                 <div id="contador" class="meta1">
@@ -28,13 +28,21 @@
                 </div>
             </div>
         </header>
-        <main>
-            <div class="mesa">
+        <main id="main">
+            <div id="mesa" class="mesa"></div>   
+
+            <div id="feedback" class="feedback">
+                <div class="message">
+                    <h4 id="seal">🦭</h4>
+                    <div id="bien">BIEN HECHO!</div>
+                    <button id="reiniciar">¿Reiniciar?</button>
+                </div>
             </div>
         </main>
         <script src="var_globales.js"></script>
         <script src="moves.js"></script>
         <script src="timer.js"></script>
         <script src="script.js"></script>
+        <script src="iniciar.js"></script>
     </body>
 </html>

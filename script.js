@@ -61,6 +61,18 @@ function descubrir (){
 
     comparar(currentlySelected);
     aumentaContador();
+
+    var pendientes = document.querySelectorAll(".tarjeta:not(.encontrada)");
+
+    if(pendientes.length === 0){
+        setTimeout(finalizar, 1500);
+    }
+
+    function finalizar(){
+        stopTimer();
+        document.querySelector("#feedback").classList.add("visible");
+        //document.querySelector("#fin").style.backgroundColor = "rgba(0, 0, 255, 0.4)";
+    }
 }
 
 /**
@@ -102,12 +114,4 @@ function mistake (tarjetas) {
         });
     }, 1000);
 
-}
-
-reparteTarjetas();
-
-document.querySelectorAll(".tarjeta").forEach(function (elem) {
-    elem.addEventListener("click", descubrir);
-});
-
-//timer();
+}   
