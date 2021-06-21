@@ -1,4 +1,6 @@
 var cronometro;
+var minutosTexto;
+var segundosTexto;
 
 function timer (mins){
     
@@ -31,6 +33,10 @@ function timer (mins){
             minutosTexto = '0' + minutos;
         }
 
+        if(minutos == 0 && segundos == 0){
+            outOfTime();
+        }
+
         document.querySelector("#minutos").innerText = minutosTexto;
         document.querySelector("#segundos").innerText = segundosTexto;
     };
@@ -41,3 +47,12 @@ function timer (mins){
 function stopTimer(){
     clearInterval(cronometro);
 };
+
+function clearTimer(){
+    document.querySelector("#minutos").innerText = '0' + nivel;
+    document.querySelector("#segundos").innerText = "00";
+}
+
+function outOfTime(){
+    clearInterval(cronometro);
+}

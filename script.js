@@ -65,14 +65,13 @@ function descubrir (){
     var pendientes = document.querySelectorAll(".tarjeta:not(.encontrada)");
 
     if(pendientes.length === 0){
-        setTimeout(finalizar, 1500);
+        setTimeout(levelCleared, 1500);
     }
+}
 
-    function finalizar(){
-        stopTimer();
-        document.querySelector("#feedback").classList.add("visible");
-        //document.querySelector("#fin").style.backgroundColor = "rgba(0, 0, 255, 0.4)";
-    }
+function levelCleared(){
+    stopTimer();
+    document.querySelector("#feedback").classList.add("visible");
 }
 
 /**

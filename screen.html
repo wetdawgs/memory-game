@@ -26,18 +26,46 @@
                         <span id="minutos">00</span>:<span id="segundos">00</span>
                     </div>
                 </div>
+
+                <div id="level" class="meta1">
+                    <h4>NIVEL</h4>
+                    <div id="level1" class="mta">
+                        <span id="nivel">01</span>
+                    </div>
+                </div>
             </div>
         </header>
         <main id="main">
             <div id="mesa" class="mesa"></div>   
 
             <div id="feedback" class="feedback">
-                <div class="message">
+                <div class="modal">
                     <h4 id="seal">🦭</h4>
                     <div id="bien">BIEN HECHO!</div>
-                    <button id="reiniciar">¿Reiniciar?</button>
+                    <p>Nivel completado</p>
+                </div>
+                <div id="botones">
+                    <button id="sig-nivel" class="cleared">Siguiente nivel</button>
+                    <button id="reiniciar" class="reiniciar cleared">Reiniciar</button>
                 </div>
             </div>
+
+            <!-- <div id="gameOver" class="gameOver">
+                <div class="modal">
+                    <h2>OH NO!</h2>
+                    <p>Te has quedado sin movimientos</p>
+                    <button class="reiniciar">Reiniciar</button>
+                </div>
+            </div>
+
+            <div id="finished" class="finished">
+                <div class="modal">
+                    <h2>FELICIDADES!</h2>
+                    <p>Has superado todos los niveles</p>
+                    <button class="reiniciar">Reiniciar</button>
+                </div>
+            </div> -->
+
         </main>
         <script src="var_globales.js"></script>
         <script src="moves.js"></script>

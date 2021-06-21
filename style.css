@@ -97,6 +97,12 @@ header {
   margin-left: 20px;
 }
 
+#level {
+  float: right;
+  margin-left: auto;
+  margin-right: 10px;
+}
+
 h4 {
   line-height: 0.5em;
   font-size: 15px;
@@ -126,7 +132,7 @@ body {
     flex-wrap: wrap;
     align-items: center;
     align-content: center;
-    max-width: 50rem;
+    max-width: 60rem;
     margin: auto;
     z-index: 1000;
   }
@@ -235,6 +241,7 @@ body {
   font-size: 40px;
   font-weight: 400;
   color: rgba(0, 0, 255, 0.4);
+  margin-bottom: 60px;
 }
 
 #seal {
@@ -252,12 +259,17 @@ body {
   line-height: 0.35em;
   font-size: 70px;
   z-index: -1;
+  position: relative;
 }
 
-#reiniciar {
-  line-height: 1.5em;
-  margin: 0 auto;
-  margin-top: 20px;
+#botones {
+  display: flex;
+}
+
+.cleared {
+  position: relative;
+  margin: auto;
+  margin-top: 40px;
   padding-top: 20px;
   display: block;
   padding: 5px;
