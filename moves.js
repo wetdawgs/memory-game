@@ -17,7 +17,7 @@ function clearCounter(){
 
 function outOfMoves(){
     stopTimer();
-    document.querySelector(".mesa").classList.add("invisible");
+    document.querySelector("#mesa").classList.add("invisible");
     setTimeout(function() {
         document.querySelector("#outOfMoves").classList.add("visible");
     }, 1000);

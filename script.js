@@ -84,6 +84,7 @@ function levelCleared(){
 
 function finishedGame() {
     stopTimer();
+    document.querySelector("#mesa").innerHTML = "";
     document.querySelector("#finished").classList.add("visible");
 }
 

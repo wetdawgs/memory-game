@@ -15,6 +15,7 @@ function iniciar(){
     document.querySelector("#cleared").classList.remove("visible");
     document.querySelector("#outOfTime").classList.remove("visible");
     document.querySelector("#outOfMoves").classList.remove("visible");
+    document.querySelector("#finished").classList.remove("visible");
 
     document.querySelectorAll(".tarjeta").forEach(function (elem) {
         elem.addEventListener("click", descubrir);
@@ -26,6 +27,8 @@ function iniciar(){
 
 function reiniciar(){
     nivel = 1;
+    max_moves = 20;
+    tarjetasDisplay = level1.concat(level1);
     iniciar();
 }
 
