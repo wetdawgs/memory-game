@@ -1,8 +1,9 @@
 function aumentaContador() {
     movimientos++;
     var movesText = movimientos;
-    if(movimientos >= max_moves){
+    if(movimientos > max_moves){
         outOfMoves();
+        return;
     }else if(movimientos < 10){
         movesText = '0' + movimientos;
     }
@@ -15,5 +16,9 @@ function clearCounter(){
 }
 
 function outOfMoves(){
-    console.log("bich");
+    stopTimer();
+    document.querySelector(".mesa").classList.add("invisible");
+    setTimeout(function() {
+        document.querySelector("#outOfMoves").classList.add("visible");
+    }, 1000);
 }

@@ -38,33 +38,38 @@
         <main id="main">
             <div id="mesa" class="mesa"></div>   
 
-            <div id="feedback" class="feedback">
+            <div id="cleared" class="cleared message">
                 <div class="modal">
                     <h4 id="seal">🦭</h4>
                     <div id="bien">BIEN HECHO!</div>
                     <p>Nivel completado</p>
-                </div>
-                <div id="botones">
-                    <button id="sig-nivel" class="cleared">Siguiente nivel</button>
-                    <button id="reiniciar" class="reiniciar cleared">Reiniciar</button>
+                    <button id="sig-nivel" class="boton">Siguiente nivel</button>
                 </div>
             </div>
 
-            <!-- <div id="gameOver" class="gameOver">
+            <div id="outOfMoves" class="gameOver message2">
                 <div class="modal">
-                    <h2>OH NO!</h2>
+                    <h2>OH NO! 💸</h2>
                     <p>Te has quedado sin movimientos</p>
-                    <button class="reiniciar">Reiniciar</button>
+                    <button class="reiniciar boton">Reiniciar</button>
                 </div>
             </div>
 
-            <div id="finished" class="finished">
+            <div id="outOfTime" class="gameOver message2">
                 <div class="modal">
-                    <h2>FELICIDADES!</h2>
-                    <p>Has superado todos los niveles</p>
-                    <button class="reiniciar">Reiniciar</button>
+                    <h2>OH NO! 🧟</h2>
+                    <p>Te has quedado sin tiempo</p>
+                    <button class="reiniciar boton">Reiniciar</button>
                 </div>
-            </div> -->
+            </div>
+
+            <div id="finished" class="finished message2">
+                <div class="modal">
+                    <h2>FELICIDADES! 🌋</h2>
+                    <p>Has superado todos los niveles</p>
+                    <button class="boton reiniciar">Jugar de nuevo</button>
+                </div>
+            </div>
 
         </main>
         <script src="var_globales.js"></script>

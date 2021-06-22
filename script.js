@@ -65,13 +65,26 @@ function descubrir (){
     var pendientes = document.querySelectorAll(".tarjeta:not(.encontrada)");
 
     if(pendientes.length === 0){
-        setTimeout(levelCleared, 1500);
+        setTimeout(getMessage, 1500);
+    }
+}
+
+function getMessage() {
+    if(nivel < 3){
+        levelCleared();
+    }else{
+        finishedGame();
     }
 }
 
 function levelCleared(){
     stopTimer();
-    document.querySelector("#feedback").classList.add("visible");
+    document.querySelector("#cleared").classList.add("visible");
+}
+
+function finishedGame() {
+    stopTimer();
+    document.querySelector("#finished").classList.add("visible");
 }
 
 /**

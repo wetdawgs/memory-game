@@ -1,4 +1,6 @@
-document.querySelector("#reiniciar").addEventListener("click", reiniciar);
+document.querySelectorAll(".reiniciar").forEach(function (b) {
+    b.addEventListener("click", reiniciar);
+});
 
 document.querySelector("#sig-nivel").addEventListener("click", subeNivel);
 
@@ -6,20 +8,19 @@ function iniciar(){
     movimientos = 0;
     clearCounter();
     clearTimer();
-
     reparteTarjetas();
 
-    document.querySelector("#feedback").classList.remove("visible");
+    document.querySelector(".mesa").classList.remove("invisible");
 
+    document.querySelector("#cleared").classList.remove("visible");
+    document.querySelector("#outOfTime").classList.remove("visible");
+    document.querySelector("#outOfMoves").classList.remove("visible");
 
     document.querySelectorAll(".tarjeta").forEach(function (elem) {
         elem.addEventListener("click", descubrir);
     });
-
     document.querySelector("#nivel").innerText = '0' + nivel;
-
     document.querySelector("#total-moves").innerText = max_moves;
-
     timer(nivel);
 }
 
@@ -28,8 +29,6 @@ function reiniciar(){
     iniciar();
 }
 
-iniciar(1);
-
 function subeNivel(){
     nivel++;
     var currentDeck = nivel == 2 ? level2 : level3;
@@ -37,3 +36,5 @@ function subeNivel(){
     tarjetasDisplay = currentDeck.concat(currentDeck);
     iniciar();
 }
+
+iniciar(1);

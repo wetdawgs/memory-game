@@ -20,6 +20,7 @@ function timer (mins){
             segundos = 0;
             minutos = 0;
             clearInterval(cronometro);
+            outOfTime();
         }
 
         segundosTexto = segundos;
@@ -31,10 +32,6 @@ function timer (mins){
 
         if(minutos < 10){
             minutosTexto = '0' + minutos;
-        }
-
-        if(minutos == 0 && segundos == 0){
-            outOfTime();
         }
 
         document.querySelector("#minutos").innerText = minutosTexto;
@@ -54,5 +51,8 @@ function clearTimer(){
 }
 
 function outOfTime(){
-    clearInterval(cronometro);
+    document.querySelector(".mesa").classList.add("invisible");
+    setTimeout(function() {
+        document.querySelector("#outOfTime").classList.add("visible");
+    }, 1000);
 }
