@@ -16,6 +16,8 @@ function iniciar(){
     document.querySelector("#outOfTime").classList.remove("visible");
     document.querySelector("#outOfMoves").classList.remove("visible");
     document.querySelector("#finished").classList.remove("visible");
+    document.querySelector("#header").classList.remove("invisible");
+    document.querySelector("body").classList.remove("winner");
 
     document.querySelectorAll(".tarjeta").forEach(function (elem) {
         elem.addEventListener("click", descubrir);
@@ -35,7 +37,7 @@ function reiniciar(){
 function subeNivel(){
     nivel++;
     var currentDeck = nivel == 2 ? level2 : level3;
-    max_moves = nivel*30;
+    max_moves = nivel*20;
     tarjetasDisplay = currentDeck.concat(currentDeck);
     iniciar();
 }

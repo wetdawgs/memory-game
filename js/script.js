@@ -1,46 +1,4 @@
 /**
- * Función que agrega la clase todos los emojis de nuestra baraja al elemento
- * con la clase "mesa". Cada uno en su propio contenedor, al cual le damos las
- * clases "tarjeta" y "contenidos" para que se visualicen bien en la página web.
- */
-function reparteTarjetas () {
-
-    var mesa = document.querySelector(".mesa");
-    
-    mesa.innerHTML = "";
-
-    var tarjetasBarajadas = barajaTarjetas();
-
-    tarjetasBarajadas.forEach(function(elem) {
-        
-        var tarejta = document.createElement("div");
-
-        tarejta.innerHTML = '<div class="tarjeta" data-valor=" ' + elem + '">'
-                            + '<div class="contenido">'
-                                + elem
-                            + '</div>'
-                            +'</div>';
-
-        mesa.appendChild(tarejta);
-    });
-}
-
-/**
- * Reordena los elementos de "tarjetasDisplay" de manera aleatoria, para que 
- * se muestren en diferente orden cada vez que se recarga la página.
- * @returns El arreglo "tarjetasDisplay" con los elementos en un orden aleatorio.
- */
-function barajaTarjetas () {
-    var resultado;
-
-    resultado = tarjetasDisplay.sort(function () {
-        return 0.5 - Math.random();
-    });
-
-    return resultado;
-}
-
-/**
  * Voltea las tarjetas cuando son clickeadas. Solo se pueden voltear 2 tarjetas a la vez.
  */
 function descubrir (){
@@ -80,12 +38,16 @@ function getMessage() {
 function levelCleared(){
     stopTimer();
     document.querySelector("#cleared").classList.add("visible");
+    document.querySelector("#mesa").innerHTML = "";
 }
 
 function finishedGame() {
     stopTimer();
     document.querySelector("#mesa").innerHTML = "";
     document.querySelector("#finished").classList.add("visible");
+    document.querySelector("#header").classList.add("invisible");
+    document.querySelector("body").classList.add("winner");
+
 }
 
 /**

@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+body {
+    font-family: 'Righteous', sans-serif;
+    font-size: 40px;
+    color: #FFF;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#box {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+h2 {
+    margin-bottom: 0px;
+}
+
+#boton {
+    margin-top: 10px;
+    text-align: center;
+    font-family: 'Righteous', sans-serif;
+    font-size: 30px;
+}
+
+a {
+    padding: 5px;
+    border: none;
+    background-color: rgba(224, 2, 106, 1);
+    color: #FFF;
+    font-family: 'Righteous', sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+    border-radius: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    left: auto;
+    right: auto;
+    text-decoration: none;
+}
+
+span {
+    font-size: 80px;
+}
+
+#seal1 {
+    transform: rotateY(90deg) scaleX(-1);
+}
