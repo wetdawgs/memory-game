@@ -6,68 +6,68 @@
         name="viewport"
         content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        <title>Jueguito</title>
+        <title>Memory Game</title>
         <link href="../css/style.css" rel="stylesheet" />
     </head>
 
-    <body id="fin" class="inicio">
+    <body>
         <header id="header">
             <div id="father">
-                <div id="contador" class="meta1">
-                    <h4>MOVIMIENTOS</h4>
+                <div id="count" class="meta1">
+                    <h4>MOVES</h4>
                     <div id="moves" class="mta">
                         <span id="player-moves">00</span>/<span id="total-moves">20</span>
                     </div>
                 </div>
     
                 <div id="timer" class="meta1">
-                    <h4>TIEMPO</h4>
+                    <h4>TIME</h4>
                     <div id="temp" class="mta">
-                        <span id="minutos">00</span>:<span id="segundos">00</span>
+                        <span id="minutes">00</span>:<span id="seconds">00</span>
                     </div>
                 </div>
 
                 <div id="level" class="meta1">
-                    <h4>NIVEL</h4>
+                    <h4>LEVEL</h4>
                     <div id="level1" class="mta">
-                        <span id="nivel">01</span>
+                        <span id="lev">01</span>
                     </div>
                 </div>
             </div>
         </header>
         <main id="main">
-            <div id="mesa" class="mesa"></div>   
+            <div id="lay-out" class="lay-out"></div>   
 
             <div id="cleared" class="cleared message">
                 <div class="modal">
                     <h4 id="seal">🦭</h4>
-                    <div id="bien">BIEN HECHO!</div>
-                    <p>Nivel completado</p>
-                    <button id="sig-nivel" class="boton">Siguiente nivel</button>
+                    <div id="well-done">WELL DONE!</div>
+                    <p>Level cleared</p>
+                    <button id="next-lev" class="butt">Next level</button>
                 </div>
             </div>
 
             <div id="outOfMoves" class="gameOver message2">
                 <div class="modal">
                     <h2>OH NO! 💸</h2>
-                    <p>Te has quedado sin movimientos</p>
-                    <button class="reiniciar boton">Reiniciar</button>
+                    <p>You've run out of moves</p>
+                    <button class="restart butt">restart</button>
                 </div>
             </div>
 
             <div id="outOfTime" class="gameOver message2">
                 <div class="modal">
                     <h2>OH NO! 🧟</h2>
-                    <p>Te has quedado sin tiempo</p>
-                    <button class="reiniciar boton">Reiniciar</button>
+                    <p>You've run out of time</p>
+                    <button class="restart butt">Restart</button>
                 </div>
             </div>
 
             <div id="finished" class="finished message2">
                 <div class="modal">
-                    <h2 class="congrats">FELICIDADES! 🌋</h2>
-                    <p class="congrats">Has superado todos los niveles</p>
-                    <button class="boton reiniciar">Jugar de nuevo</button>
+                    <h2 class="congrats">CONGRATS! 🌋</h2>
+                    <p class="congrats">You've cleared all the leves, big boy!</p>
+                    <button class="butt restart">Play again</button>
                 </div>
             </div>
 

@@ -1,8 +1,11 @@
 function aumentaContador() {
     movimientos++;
     var movesText = movimientos;
-    if(movimientos > max_moves){
-        outOfMoves();
+    var pending = document.querySelectorAll(".tarjeta:not(.encontrada)").length;
+    if(movimientos === max_moves && pending > 0){
+        movesText = movimientos;
+        document.querySelector("#player-moves").innerText = movesText;
+        setTimeout(outOfMoves, 500);
         return;
     }else if(movimientos < 10){
         movesText = '0' + movimientos;
@@ -16,8 +19,9 @@ function clearCounter(){
 }
 
 function outOfMoves(){
+    failure = true;
     stopTimer();
-    document.querySelector("#mesa").classList.add("invisible");
+    document.querySelector("#lay-out").classList.add("invisible");
     setTimeout(function() {
         document.querySelector("#outOfMoves").classList.add("visible");
     }, 1000);

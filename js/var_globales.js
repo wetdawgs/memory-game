@@ -2,6 +2,8 @@ var movimientos = 0;
 
 var nivel = 1;
 
+var failure = false;
+
 var max_moves = nivel*20;
 
 var emojis = [ "🐸", "🦑", "🦭", "🌒", "🍤", "🧊", "🌋", 

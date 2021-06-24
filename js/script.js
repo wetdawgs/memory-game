@@ -36,18 +36,21 @@ function getMessage() {
 }
 
 function levelCleared(){
+    if(failure)
+        return;
     stopTimer();
     document.querySelector("#cleared").classList.add("visible");
-    document.querySelector("#mesa").innerHTML = "";
+    document.querySelector("#lay-out").innerHTML = "";
 }
 
 function finishedGame() {
+    if(failure)
+        return;
     stopTimer();
-    document.querySelector("#mesa").innerHTML = "";
+    document.querySelector("#lay-out").innerHTML = "";
     document.querySelector("#finished").classList.add("visible");
     document.querySelector("#header").classList.add("invisible");
     document.querySelector("body").classList.add("winner");
-
 }
 
 /**

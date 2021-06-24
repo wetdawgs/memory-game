@@ -1,11 +1,11 @@
 /**
  * Función que agrega la clase todos los emojis de nuestra baraja al elemento
- * con la clase "mesa". Cada uno en su propio contenedor, al cual le damos las
- * clases "tarjeta" y "contenidos" para que se visualicen bien en la página web.
+ * con la clase "lay-out". Cada uno en su propio contenedor, al cual le damos las
+ * clases "tarjeta" y "contenidos" para que se visualicen well-done en la página web.
  */
  function reparteTarjetas () {
 
-    var mesa = document.querySelector(".mesa");
+    var mesa = document.querySelector(".lay-out");
     
     mesa.innerHTML = "";
 

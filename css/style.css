@@ -83,7 +83,7 @@ main {
     position: relative;
 }
   
-.mesa {
+.lay-out {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -212,7 +212,7 @@ main {
     z-index: 1000;
 }
 
-#bien {
+#well-done {
     margin-top: 0 !important;
     margin-bottom: 20px;
     padding-top: 0 !important;
@@ -222,11 +222,8 @@ main {
     position: relative;
 }
 
-#botones {
-    display: flex;
-}
 
-.boton {
+.butt {
     position: relative;
     margin: auto;
     margin-top: 40px;

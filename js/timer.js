@@ -34,8 +34,8 @@ function timer (mins){
             minutosTexto = '0' + minutos;
         }
 
-        document.querySelector("#minutos").innerText = minutosTexto;
-        document.querySelector("#segundos").innerText = segundosTexto;
+        document.querySelector("#minutes").innerText = minutosTexto;
+        document.querySelector("#seconds").innerText = segundosTexto;
     };
 
     cronometro = setInterval(aumentaReloj, 1000);
@@ -46,12 +46,13 @@ function stopTimer(){
 };
 
 function clearTimer(){
-    document.querySelector("#minutos").innerText = '0' + nivel;
-    document.querySelector("#segundos").innerText = "00";
+    document.querySelector("#minutes").innerText = '0' + nivel;
+    document.querySelector("#seconds").innerText = "00";
 }
 
 function outOfTime(){
-    document.querySelector(".mesa").classList.add("invisible");
+    failure = true;
+    document.querySelector(".lay-out").classList.add("invisible");
     setTimeout(function() {
         document.querySelector("#outOfTime").classList.add("visible");
     }, 1000);
