@@ -1,5 +1,6 @@
 /**
- * Voltea las tarjetas cuando son clickeadas. Solo se pueden voltear 2 tarjetas a la vez.
+ * It flips a card and reveals it contents when the user clicks on it.
+ * Only two cards can be flipped at all given times.
  */
 function flip(){
 
@@ -27,6 +28,9 @@ function flip(){
     }
 }
 
+/**
+ * It displays a message to te user, depending on wheter they cleared the level or not.
+ */
 function getMessage() {
     if(level < 3){
         levelCleared();
@@ -35,6 +39,15 @@ function getMessage() {
     }
 }
 
+/**
+ * When all pairs haven been found, the user gets a message telling them they can move on
+ * to the next level. 
+ * 
+ * When the user completes the level with one too many moves, the game still interprets this
+ * as a victory and so it displays both the failure and success messages. To avoid this issue,
+ * we first check that the user has nos lost the game. In this case, we don't display the
+ * success message. 
+ */
 function levelCleared(){
     if(failure)
         return;
@@ -43,6 +56,10 @@ function levelCleared(){
     document.querySelector("#lay-out").innerHTML = "";
 }
 
+/**
+ * When the uses has cleared all three levels, a message is displayed congratulating them.
+ * The player has the option to start the game again from level 1. 
+ */
 function finishedGame() {
     if(failure)
         return;
@@ -54,9 +71,9 @@ function finishedGame() {
 }
 
 /**
- * Compara el emoji de las dos tarjetas volteadas. Si son iguales, manda a llamar a la función
- * acierto(); en otro caso, manda a llamar a la función error().
- * @param {object[]} tarjetas una lista con las dos tarjetas que se quieren comparar.
+ * Compares the emojis in the two flipped cards. The found() function is called
+ * if they contain the same emoj; otherwise, mistake() is called.
+ * @param {object[]} cards the two cards that we want to compare.
  */
 function compare (cards) {
     if(cards[0].dataset.value == cards[1].dataset.value){
@@ -67,8 +84,9 @@ function compare (cards) {
 }
 
 /**
- * 
- * @param {object[]} cards 
+ * When a pair or cards is found, this function adds the class "found" to them to play a 
+ * fade animation and make them dissapear from the screen.
+ * @param {object[]} cards the two cards that form a pair.
  */
 function found (cards) {
     cards.forEach(function (elem) {
@@ -77,8 +95,9 @@ function found (cards) {
 }
 
 /**
- * 
- * @param {object[]} tarjetas 
+ * When thw two carss flip do not form a pair, this function adds the class "error" 
+ * to makes them flip back around.
+ * @param {object[]} cards the two cards flipped that don't match.
  */
 function mistake (cards) {
     cards.forEach(function (elem) {

@@ -1,7 +1,7 @@
 /**
- * Función que agrega la clase todos los emojis de nuestra baraja al elemento
- * con la clase "lay-out". Cada uno en su propio contenedor, al cual le damos las
- * clases "tarjeta" y "contenidos" para que se visualicen well-done en la página web.
+ * Wraps every emoji in the displayDeck list in a div element, and appends it as a child node
+ * to the "lay-out" element. We add the "class" and "content" classes to the emoji container
+ * to style it later.
  */
  function lay_out_deck() {
 
@@ -26,9 +26,9 @@
 }
 
 /**
- * Reordena los elementos de "tarjetasDisplay" de manera aleatoria, para que 
- * se muestren en diferente orden cada vez que se recarga la página.
- * @returns El arreglo "tarjetasDisplay" con los elementos en un orden aleatorio.
+ * Shifts the elements of the displayDeck list in a random order, so that every time the user
+ * plays the game the cards are in different order.
+ * @returns 
  */
 function shift() {
     var result;

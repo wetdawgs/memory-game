@@ -1,9 +1,19 @@
+/**
+ * Add an event listener to all the "restart buttons", displayed when the user
+ * loses the game.
+ */
 document.querySelectorAll(".restart").forEach(function (b) {
     b.addEventListener("click", restart);
 });
 
-document.querySelector("#next-lev").addEventListener("click", subeNivel);
 
+document.querySelector("#next-lev").addEventListener("click", nextLevel);
+
+/**
+ * Diplays all the card on the deck on the screen. starts the timer and te counter
+ * from their default value: 0. This function is used to start all three levels
+ * since their particular difficulties are determined by global variables.
+ */
 function start(){
     moves = 0;
     failure = false;
@@ -45,7 +55,7 @@ function restart(){
  * Moves the player un level up by updating the level, max_moves and displayDeck
  * variables to their next values. 
  */
-function subeNivel(){
+function nextLevel(){
     level++;
     var currentDeck = level == 2 ? level2 : level3;
     max_moves = level*20;
