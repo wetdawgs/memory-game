@@ -3,25 +3,25 @@
  * con la clase "lay-out". Cada uno en su propio contenedor, al cual le damos las
  * clases "tarjeta" y "contenidos" para que se visualicen well-done en la página web.
  */
- function reparteTarjetas () {
+ function lay_out_deck() {
 
-    var mesa = document.querySelector(".lay-out");
+    var layout = document.querySelector(".lay-out");
     
-    mesa.innerHTML = "";
+    layout.innerHTML = "";
 
-    var tarjetasBarajadas = barajaTarjetas();
+    var shifted_deck = shift();
 
-    tarjetasBarajadas.forEach(function(elem) {
+    shifted_deck.forEach(function(elem) {
         
-        var tarejta = document.createElement("div");
+        var card = document.createElement("div");
 
-        tarejta.innerHTML = '<div class="tarjeta" data-valor=" ' + elem + '">'
-                            + '<div class="contenido">'
+        card.innerHTML = '<div class="card" data-value=" ' + elem + '">'
+                            + '<div class="content">'
                                 + elem
                             + '</div>'
                             +'</div>';
 
-        mesa.appendChild(tarejta);
+        layout.appendChild(card);
     });
 }
 
@@ -30,12 +30,12 @@
  * se muestren en diferente orden cada vez que se recarga la página.
  * @returns El arreglo "tarjetasDisplay" con los elementos en un orden aleatorio.
  */
-function barajaTarjetas () {
-    var resultado;
+function shift() {
+    var result;
 
-    resultado = tarjetasDisplay.sort(function () {
+    result = displayDeck.sort(function () {
         return 0.5 - Math.random();
     });
 
-    return resultado;
+    return result;
 }

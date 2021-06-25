@@ -1,34 +1,34 @@
 /**
  * Voltea las tarjetas cuando son clickeadas. Solo se pueden voltear 2 tarjetas a la vez.
  */
-function descubrir (){
+function flip(){
 
-    var descubiertas = document.querySelectorAll(".descubierta:not(.encontrada)");
+    var flipped = document.querySelectorAll(".flipped:not(.found)");
 
-    if( descubiertas.length > 1){
+    if(flipped.length > 1){
         return;
     }
 
-    this.classList.add("descubierta");
+    this.classList.add("flipped");
 
-    var currentlySelected = document.querySelectorAll(".descubierta:not(.encontrada)");
+    var currentlySelected = document.querySelectorAll(".flipped:not(.found)");
 
     if(currentlySelected.length < 2){
         return;
     }
 
-    comparar(currentlySelected);
-    aumentaContador();
+    compare(currentlySelected);
+    updateCounter();
 
-    var pendientes = document.querySelectorAll(".tarjeta:not(.encontrada)");
+    var pending = document.querySelectorAll(".card:not(.found)");
 
-    if(pendientes.length === 0){
+    if(pending.length === 0){
         setTimeout(getMessage, 1500);
     }
 }
 
 function getMessage() {
-    if(nivel < 3){
+    if(level < 3){
         levelCleared();
     }else{
         finishedGame();
@@ -58,21 +58,21 @@ function finishedGame() {
  * acierto(); en otro caso, manda a llamar a la función error().
  * @param {object[]} tarjetas una lista con las dos tarjetas que se quieren comparar.
  */
-function comparar (tarjetas) {
-    if(tarjetas[0].dataset.valor == tarjetas[1].dataset.valor){
-        acierto(tarjetas);
+function compare (cards) {
+    if(cards[0].dataset.value == cards[1].dataset.value){
+        found(cards);
     }else {
-        mistake(tarjetas);
+        mistake(cards);
     }
 }
 
 /**
  * 
- * @param {object[]} tarjetas 
+ * @param {object[]} cards 
  */
-function acierto (tarjetas) {
-    tarjetas.forEach(function (elem) {
-        elem.classList.add("encontrada");
+function found (cards) {
+    cards.forEach(function (elem) {
+        elem.classList.add("found");
     });
 }
 
@@ -80,14 +80,14 @@ function acierto (tarjetas) {
  * 
  * @param {object[]} tarjetas 
  */
-function mistake (tarjetas) {
-    tarjetas.forEach(function (elem) {
+function mistake (cards) {
+    cards.forEach(function (elem) {
         elem.classList.add("error");
     });
 
     setTimeout(function() {
-        tarjetas.forEach(function (elem) {
-            elem.classList.remove("descubierta");
+        cards.forEach(function (elem) {
+            elem.classList.remove("flipped");
             elem.classList.remove("error");
         });
     }, 1000);

@@ -1,52 +1,52 @@
-var cronometro;
+var stopwatch;
 var minutosTexto;
 var segundosTexto;
 
 function timer (mins){
     
-    minutos = mins;
-    segundos = 0;
-    minutosTexto = "00";
-    segundosTexto = "00";
+    minutes = mins;
+    seconds = 0;
+    minutesText = "00";
+    secondsText = "00";
 
-    function aumentaReloj() {
-        segundos--;
-        if(segundos  < 0){
-            segundos = 59;
-            minutos--;
+    function tick() {
+        seconds--;
+        if(seconds  < 0){
+            seconds = 59;
+            minutes--;
         }
 
-        if(minutos < 0){
-            segundos = 0;
-            minutos = 0;
-            clearInterval(cronometro);
+        if(minutes < 0){
+            seconds = 0;
+            minutes = 0;
+            clearInterval(stopwatch);
             outOfTime();
         }
 
-        segundosTexto = segundos;
-        minutosTexto = minutos;
+        secondsText = seconds;
+        minutesText = minutes;
 
-        if(segundos < 10){
-            segundosTexto = '0' + segundos;
+        if(seconds < 10){
+            secondsText = '0' + seconds;
         }
 
-        if(minutos < 10){
-            minutosTexto = '0' + minutos;
+        if(minutes < 10){
+            minutesText = '0' + minutes;
         }
 
-        document.querySelector("#minutes").innerText = minutosTexto;
-        document.querySelector("#seconds").innerText = segundosTexto;
+        document.querySelector("#minutes").innerText = minutesText;
+        document.querySelector("#seconds").innerText = secondsText;
     };
 
-    cronometro = setInterval(aumentaReloj, 1000);
+    stopwatch = setInterval(tick, 1000);
 }
 
 function stopTimer(){
-    clearInterval(cronometro);
+    clearInterval(stopwatch);
 };
 
 function clearTimer(){
-    document.querySelector("#minutes").innerText = '0' + nivel;
+    document.querySelector("#minutes").innerText = '0' + level;
     document.querySelector("#seconds").innerText = "00";
 }
 

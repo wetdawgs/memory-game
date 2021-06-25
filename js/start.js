@@ -4,12 +4,12 @@ document.querySelectorAll(".restart").forEach(function (b) {
 
 document.querySelector("#next-lev").addEventListener("click", subeNivel);
 
-function iniciar(){
-    movimientos = 0;
+function start(){
+    moves = 0;
     failure = false;
     clearCounter();
     clearTimer();
-    reparteTarjetas();
+    lay_out_deck();
 
     document.querySelector(".lay-out").classList.remove("invisible");
 
@@ -20,27 +20,38 @@ function iniciar(){
     document.querySelector("#header").classList.remove("invisible");
     document.querySelector("body").classList.remove("winner");
 
-    document.querySelectorAll(".tarjeta").forEach(function (elem) {
-        elem.addEventListener("click", descubrir);
+    document.querySelectorAll(".card").forEach(function (elem) {
+        elem.addEventListener("click", flip);
     });
-    document.querySelector("#lev").innerText = '0' + nivel;
+
+    document.querySelector("#lev").innerText = '0' + level;
     document.querySelector("#total-moves").innerText = max_moves;
-    timer(nivel);
+
+    timer(level);
 }
 
+/**
+ * Restarts the game from level 1. We set the variables of level, max_moves
+ * and displayDeck to the values the would have in the first level.
+ */
 function restart(){
-    nivel = 1;
+    level = 1;
     max_moves = 20;
-    tarjetasDisplay = level1.concat(level1);
-    iniciar();
+    displayDeck = level1.concat(level1);
+    start();
 }
 
+/**
+ * Moves the player un level up by updating the level, max_moves and displayDeck
+ * variables to their next values. 
+ */
 function subeNivel(){
-    nivel++;
-    var currentDeck = nivel == 2 ? level2 : level3;
-    max_moves = nivel*20;
-    tarjetasDisplay = currentDeck.concat(currentDeck);
-    iniciar();
+    level++;
+    var currentDeck = level == 2 ? level2 : level3;
+    max_moves = level*20;
+    displayDeck = currentDeck.concat(currentDeck);
+    start();
 }
 
-iniciar(1);
+/* Start the fisrt level when the page is first loaded or reloaded */
+start(1);

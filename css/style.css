@@ -97,7 +97,7 @@ main {
     visibility: hidden;
 }
   
-.tarjeta {
+.card {
     width: 6rem;
     height: 6rem;
     margin: 0.5rem;
@@ -111,7 +111,7 @@ main {
     transform-style: preserve-3d;
 }
   
-.contenido {
+.content {
     position: absolute;
     left: 0;
     right: 0;
@@ -129,11 +129,11 @@ main {
     padding-top: 0.4rem;
 }
   
-.contenido::selection {
+.content::selection {
     background: transparent;
 }
   
-.tarjeta.descubierta{
+.card.flipped{
     transform: rotateY(-180deg);
 }
 
@@ -157,7 +157,7 @@ main {
     }
 }
   
-@keyframes acierto {
+@keyframes found {
     from {
       transform: rotateY(-180deg) scale3d(1, 1, 1);
       opacity: 1;
@@ -174,12 +174,12 @@ main {
     }
 }
   
-.encontrada {
+.found {
     pointer-events: none;
 }
   
-.encontrada .contenido {
-    animation: acierto 1.3s ease-in-out forwards;
+.found .content {
+    animation: found 1.3s ease-in-out forwards;
 }
   
 .error {

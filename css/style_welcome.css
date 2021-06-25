@@ -33,7 +33,7 @@ h2 {
     margin-bottom: 0px;
 }
 
-#boton {
+#butt {
     margin-top: 10px;
     text-align: center;
     font-family: 'Righteous', sans-serif;
@@ -54,12 +54,4 @@ a {
     left: auto;
     right: auto;
     text-decoration: none;
-}
-
-span {
-    font-size: 80px;
-}
-
-#seal1 {
-    transform: rotateY(90deg) scaleX(-1);
 }

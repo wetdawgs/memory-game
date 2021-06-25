@@ -1,14 +1,14 @@
-function aumentaContador() {
-    movimientos++;
-    var movesText = movimientos;
-    var pending = document.querySelectorAll(".tarjeta:not(.encontrada)").length;
-    if(movimientos === max_moves && pending > 0){
-        movesText = movimientos;
+function updateCounter() {
+    moves++;
+    var movesText = moves;
+    var pending = document.querySelectorAll(".card:not(.found)").length;
+    if(moves === max_moves && pending > 0){
+        movesText = moves;
         document.querySelector("#player-moves").innerText = movesText;
         setTimeout(outOfMoves, 500);
         return;
-    }else if(movimientos < 10){
-        movesText = '0' + movimientos;
+    }else if(moves < 10){
+        movesText = '0' + moves;
     }
 
     document.querySelector("#player-moves").innerText = movesText;
